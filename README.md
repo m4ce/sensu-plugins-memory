@@ -2,6 +2,16 @@
 
 A sensu plugin to monitor real memory and swap usage.
 
+## Installation
+
+System-wide installation:
+
+    $ gem install sensu-plugins-memory
+
+Embedded sensu installation:
+
+    $ /opt/sensu/embedded/bin/gem install sensu-plugins-memory
+
 ## Usage
 
 The plugin accepts the following command line options:
