@@ -92,13 +92,13 @@ class CheckMemory < Sensu::Plugin::Check::CLI
 
     if config[:used]
       msg = "#{prefix} memory used #{used / 1024}MB of #{@vmstat['total'] / 1024}MB"
-      warning("#{msg} (>= #{config[:crit]}%)") if pused >= config[:crit]
-      critical("#{msg} (>= #{config[:warn]}%)") if pused >= config[:warn]
+      critical("#{msg} (>= #{config[:crit]}%)") if pused >= config[:crit]
+      warning("#{msg} (>= #{config[:warn]}%)") if pused >= config[:warn]
       ok("#{msg} (< #{config[:warn]}%)")
     else
       msg = "#{prefix} memory available #{avail / 1024}MB of #{@vmstat['total'] / 1024}MB"
-      warning("#{msg} (<= #{config[:crit]}%)") if pavail <= config[:crit]
-      critical("#{msg} (<= #{config[:warn]}%)") if pavail <= config[:warn]
+      critical("#{msg} (<= #{config[:crit]}%)") if pavail <= config[:crit]
+      warning("#{msg} (<= #{config[:warn]}%)") if pavail <= config[:warn]
       ok("#{msg} (>= #{config[:warn]}%)")
     end
   end
